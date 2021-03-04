@@ -20,8 +20,8 @@ ENTRYPOINT git -C ${dir} clone $gitUrl \
                 && make \
                 && LD_LIBRARY_PATH=${dir}/FccSrImitator/lib.linux/ \
                 && export LD_LIBRARY_PATH \
-                && ${dir}/FccSrImitator/bin/release/ControlStation/ControlStation
-                
+                && ${dir}/FccSrImitator/bin/release/ControlStationConsole/ControlStationConsole
+
 CMD /bin/sh
 
 
