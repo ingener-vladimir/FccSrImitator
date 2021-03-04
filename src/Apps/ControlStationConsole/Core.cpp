@@ -1,30 +1,22 @@
-#include "MainWindow.h"
-#include "ui_MainWindow.h"
-
+#include "Core.h"
 #include "linkingFcc/infornation/Params/fcc-sr/ParamsSr.h"
 
-MainWindow::MainWindow(QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::MainWindow)
+Core::Core()
 {
-    ui->setupUi(this);
-
-    setWindowTitle("СТАНЦИЯ");
     _linkingFCC.createServer(9090, TypeFactory::FCC_SR);
 
     QObject::connect(&_timer, &QTimer::timeout,
-                     this, &MainWindow::update);
+                     this, &Core::update);
 
     _timer.start(1000);
 }
 
-MainWindow::~MainWindow()
+Core::~Core()
 {
     _timer.stop();
-    delete ui;
 }
 
-void MainWindow::update()
+void Core::update()
 {
     ParamsSr& paramsSr = ParamsSrSingleton::getInstance();
     paramsSr.getFunctionControlSr().setCounterTelemetry(rand() % 100);

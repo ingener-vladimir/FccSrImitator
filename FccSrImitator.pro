@@ -1,5 +1,5 @@
 TEMPLATE  = subdirs
-CONFIG   += ordered
+CONFIG   += ordered console
 
 SUBDIRS += \
     src/Libs \
