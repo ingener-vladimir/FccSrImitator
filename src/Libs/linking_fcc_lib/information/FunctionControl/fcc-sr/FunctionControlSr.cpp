@@ -115,7 +115,7 @@ QByteArray FunctionControlSr::serialize()
 {
     QByteArray array;
     QDataStream out(&array, QIODevice::WriteOnly);
-    out.setVersion(QDataStream::Qt_5_10);
+    out.setVersion(QDataStream::Qt_5_9);
     out.setByteOrder(QDataStream::LittleEndian);
 
     qint64 reserve1{0};
@@ -156,7 +156,7 @@ QByteArray FunctionControlSr::serialize()
 void FunctionControlSr::unserialize(QByteArray &array)
 {
     QDataStream in(&array, QIODevice::ReadOnly);
-    in.setVersion(QDataStream::Qt_5_10);
+    in.setVersion(QDataStream::Qt_5_9);
     in.setByteOrder(QDataStream::LittleEndian);
 
     qint64 reserve1{0};
