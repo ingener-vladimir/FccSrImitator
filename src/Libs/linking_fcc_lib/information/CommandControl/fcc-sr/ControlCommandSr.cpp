@@ -38,7 +38,7 @@ QByteArray ControlCommandSr::serialize()
 {
     QByteArray array;
     QDataStream out(&array, QIODevice::WriteOnly);
-    out.setVersion(QDataStream::Qt_5_10);
+    out.setVersion(QDataStream::Qt_5_9);
     out.setByteOrder(QDataStream::LittleEndian);
 
     out << (uint16_t)_number;

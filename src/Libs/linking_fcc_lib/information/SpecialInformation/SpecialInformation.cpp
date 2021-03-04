@@ -6,7 +6,7 @@ bool SpecialInformation::unserializeSpecialInformation(QByteArray &array)
         return false;
 
     QDataStream in(&array, QIODevice::ReadOnly);
-    in.setVersion(QDataStream::Qt_5_10);
+    in.setVersion(QDataStream::Qt_5_9);
     in.setByteOrder(QDataStream::LittleEndian);
 
     in >> _length;

@@ -15,7 +15,7 @@ QByteArray PropagationSignalDelay::serialize() const
 {
     QByteArray array;
     QDataStream out(&array, QIODevice::WriteOnly);
-    out.setVersion(QDataStream::Qt_5_10);
+    out.setVersion(QDataStream::Qt_5_9);
     out.setByteOrder(QDataStream::LittleEndian);
 
     quint64 dt = _dateTime.toSecsSinceEpoch();
